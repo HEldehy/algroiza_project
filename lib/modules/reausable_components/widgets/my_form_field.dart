@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MyFormField extends StatelessWidget {
-  Widget ?widget;
+  Widget? widget;
   final TextEditingController controller;
   final TextInputType type;
-   IconData ?icon;
+  IconData? icon;
   final String label;
   final VoidCallback validator;
   VoidCallback? onTap;
@@ -18,10 +18,10 @@ class MyFormField extends StatelessWidget {
   FocusNode? focusNode;
   MyFormField(
       {Key? key,
-        this.widget,
+      this.widget,
       required this.controller,
       required this.type,
-       this.icon,
+      this.icon,
       required this.label,
       required this.validator,
       this.onTap,
@@ -51,9 +51,8 @@ class MyFormField extends StatelessWidget {
             borderRadius: BorderRadius.circular(1.0),
           ),
         ),
-        validator: ( value ){
+        validator: (value) {
           return '$value Must Not be empty';
-
         },
         onTap: () {
           onTap!();
@@ -64,7 +63,6 @@ class MyFormField extends StatelessWidget {
         onChanged: (String value) {
           onChange!();
         },
-
       ),
     );
   }

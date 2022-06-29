@@ -7,6 +7,7 @@ import '../../models/on_boarding_model.dart';
 import '../reausable_components/constance/color.dart';
 import '../reausable_components/widgets/my_button.dart';
 import '../reausable_components/widgets/on_boarding_modules.dart';
+
 //up dated in 30/6 at 00 :38
 class OnBoardingPage extends StatefulWidget {
   static String id = 'OnBoardingPag';
@@ -50,28 +51,28 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Navigator.pushNamed(context, LoginPage.id);
                     },
                     child: Container(
-                      width: width/6.5,
-                        height: height/23,
-                        decoration: BoxDecoration(
-                          color: AppColor.appBarColor,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      child:  Center(
-                        child:  Text('Skip'.toUpperCase(),
-                        style:const TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                        ),
+                      width: width / 6.5,
+                      height: height / 23,
+                      decoration: BoxDecoration(
+                        color: AppColor.appBarColor,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Skip'.toUpperCase(),
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                          ),
                         ),
                       ),
-                      ),
+                    ),
                   ),
                 ],
               ),

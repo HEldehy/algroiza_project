@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:testt/models/on_boarding_model.dart';
+
 class OnBoardingBuildModules extends StatelessWidget {
-  const OnBoardingBuildModules({Key? key, required this.model}) : super(key: key);
+  const OnBoardingBuildModules({Key? key, required this.model})
+      : super(key: key);
   final OnBoarding model;
   @override
   Widget build(BuildContext context) {
@@ -14,11 +16,7 @@ class OnBoardingBuildModules extends StatelessWidget {
             model.title,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'ICT',
-              fontWeight: FontWeight.bold
-
-            ),
+                fontSize: 20.0, fontFamily: 'ICT', fontWeight: FontWeight.bold),
           ),
         ),
         const SizedBox(
@@ -29,16 +27,13 @@ class OnBoardingBuildModules extends StatelessWidget {
           child: Text(
             model.text,
             textAlign: TextAlign.center,
-            style:  TextStyle(
-              fontSize: 14.0,
-              fontFamily: 'ICT',
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[500]
-            ),
+            style: TextStyle(
+                fontSize: 14.0,
+                fontFamily: 'ICT',
+                fontWeight: FontWeight.w500,
+                color: Colors.grey[500]),
           ),
         ),
-
-
       ],
     );
   }

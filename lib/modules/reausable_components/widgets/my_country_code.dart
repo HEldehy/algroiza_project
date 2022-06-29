@@ -9,22 +9,21 @@ class MyCountryCode extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     var phoneController = TextEditingController();
-    return  Stack(
+    return Stack(
       alignment: Alignment.centerLeft,
       children: [
-        MyFormField(controller: phoneController,
+        MyFormField(
+          controller: phoneController,
           type: TextInputType.number,
           label: '',
-          validator: (){},
-
+          validator: () {},
         ),
         Stack(
           alignment: Alignment.centerRight,
-
           children: [
             SizedBox(
-                width: width/3.4,
-                child:CountryCodePicker(
+                width: width / 3.4,
+                child: CountryCodePicker(
                   initialSelection: 'eg',
                   showCountryOnly: false,
                   showOnlyCountryWhenClosed: false,
@@ -37,13 +36,9 @@ class MyCountryCode extends StatelessWidget {
                   showFlagDialog: true,
                   alignLeft: true,
                 )),
-            const  Icon(Icons.arrow_drop_down)
+            const Icon(Icons.arrow_drop_down)
           ],
         ),
-
-
-
-
       ],
     );
   }

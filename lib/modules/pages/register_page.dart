@@ -7,6 +7,7 @@ import '../reausable_components/widgets/my_form_field.dart';
 import '../reausable_components/widgets/my_outliner_button.dart';
 import '../reausable_components/widgets/or_text.dart';
 import '../reausable_components/widgets/text_button_module.dart';
+
 class RegisterPage extends StatelessWidget {
   static String id = 'RegisterPage';
   const RegisterPage({Key? key}) : super(key: key);
@@ -36,17 +37,17 @@ class RegisterPage extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 10),
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.black
-                        ),
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.black),
                         child: IconButton(
-                          onPressed: (){
+                          onPressed: () {
                             Navigator.pushNamed(context, LoginPage.id);
-
-                          }, icon: const Icon(Icons.arrow_back_ios,color: Colors.white,),
-                          
-                          
+                          },
+                          icon: const Icon(
+                            Icons.arrow_back_ios,
+                            color: Colors.white,
                           ),
+                        ),
                       ),
                     ),
                   ],
@@ -60,7 +61,9 @@ class RegisterPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(height: 10,),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Text(
                           'Welcome To Fashion Daily',
                           style: TextStyle(
@@ -69,7 +72,6 @@ class RegisterPage extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               color: Colors.grey[500]),
                         ),
-
                         Row(
                           children: [
                             Text(
@@ -136,9 +138,9 @@ class RegisterPage extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
-                      const SizedBox(
-                        height: 12,
-                      ),
+                        const SizedBox(
+                          height: 12,
+                        ),
                         Text(
                           'Password',
                           style: TextStyle(
@@ -159,13 +161,13 @@ class RegisterPage extends StatelessWidget {
                             validator: () {
                               'Password must Not be empty';
                             }),
-                       const SizedBox(
-                          height:15,
+                        const SizedBox(
+                          height: 15,
                         ),
                         MyButton(
                             onClick: () {},
                             height: height / 15.5,
-                          //  width: double.infinity,
+                            //  width: double.infinity,
                             buttonColor: Colors.blue,
                             radius: height / 100,
                             text: 'Register',
@@ -173,7 +175,7 @@ class RegisterPage extends StatelessWidget {
                         const SizedBox(
                           height: 5,
                         ),
-                       const MyOrText(),
+                        const MyOrText(),
                         const SizedBox(
                           height: 5,
                         ),

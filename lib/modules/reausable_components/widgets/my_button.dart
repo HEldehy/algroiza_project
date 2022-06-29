@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 class MyButton extends StatelessWidget {
   final VoidCallback onClick;
   final double height;
-   double ?width;
+  double? width;
   final Color buttonColor;
   final double radius;
   final String text;
   final Color textColor;
-   MyButton(
+  MyButton(
       {Key? key,
       required this.onClick,
       required this.height,
-       this.width =double.infinity,
+      this.width = double.infinity,
       required this.buttonColor,
       required this.radius,
       required this.text,
@@ -24,7 +24,6 @@ class MyButton extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: buttonColor,
-
         borderRadius: BorderRadius.circular(3),
       ),
       height: 50,
@@ -35,14 +34,9 @@ class MyButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-
             textAlign: TextAlign.center,
-            style: TextStyle(color: textColor,
-              fontSize: 18,
-              fontWeight: FontWeight.w500
-
-
-            ),
+            style: TextStyle(
+                color: textColor, fontSize: 18, fontWeight: FontWeight.w500),
           ),
         ),
       ),
