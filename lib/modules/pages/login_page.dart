@@ -5,6 +5,7 @@ import 'package:testt/modules/reausable_components/widgets/text_button_module.da
 
 import '../reausable_components/widgets/my_country_code.dart';
 import '../reausable_components/widgets/my_outliner_button.dart';
+import '../reausable_components/widgets/or_text.dart';
 
 class LoginPage extends StatelessWidget {
   static String id = 'LoginPage';
@@ -12,6 +13,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -28,16 +31,16 @@ class LoginPage extends StatelessWidget {
             Expanded(
                 flex: 2,
                 child: SingleChildScrollView(
-                  physics:const BouncingScrollPhysics(),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: height / 26,
-                          left: height / 40,
+                  physics: const BouncingScrollPhysics(),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 22),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 15,
                         ),
-                        child: Text(
+                        Text(
                           'Welcome To Fashion Daily',
                           style: TextStyle(
                               fontSize: 16.0,
@@ -45,16 +48,10 @@ class LoginPage extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               color: Colors.grey[500]),
                         ),
-                      ),
-                      SizedBox(
-                        height: height / 80,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: height / 40,
-                          right: height / 80,
+                        const SizedBox(
+                          height: 10,
                         ),
-                        child: Row(
+                        Row(
                           children: [
                             Text(
                               'Sign in',
@@ -66,7 +63,9 @@ class LoginPage extends StatelessWidget {
                             ),
                             const Spacer(),
                             ButtonOfText(
-                                text: 'Help', onClick: () {}, color: Colors.blue),
+                                text: 'Help',
+                                onClick: () {},
+                                color: Colors.blue),
                             Container(
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(25),
@@ -78,15 +77,10 @@ class LoginPage extends StatelessWidget {
                                 )),
                           ],
                         ),
-                      ),
-                      SizedBox(
-                        height: height / 80,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: height / 40,
+                        const SizedBox(
+                          height: 20,
                         ),
-                        child: Text(
+                        Text(
                           'Phone Number',
                           style: TextStyle(
                               fontSize: 16.0,
@@ -94,69 +88,52 @@ class LoginPage extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               color: Colors.grey[500]),
                         ),
-                      ),
-                      SizedBox(
-                        height: height / 80,
-                      ),
-
-                      const MyCountryCode(),
-                      SizedBox(
-                        height: height / 80,
-                      ),
-                      MyButton(
-                          onClick: () {},
-                          height: height / 15.5,
-                          width: double.infinity,
-                          buttonColor: Colors.blue,
-                          radius: height / 100,
-                          text: 'Sign In',
-                          textColor: Colors.white),
-                      SizedBox(
-                        height: height / 100,
-                      ),
-                      Center(
-                        child: Text(
-                          'Or',
-                          style: TextStyle(
-                              fontSize: 16.0,
-                              fontFamily: 'ICT',
-                              fontWeight: FontWeight.w600,
-                              color: Colors.grey[500]),
+                        const SizedBox(
+                          height: 15,
                         ),
-                      ),
-                      SizedBox(
-                        height: height / 100,
-                      ),
-                      const MyOutlineButton(),
-                      SizedBox(
-                        height: height / 30,
-                      ),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-
-
-                          Text(
-                            'Don\'t has any account ?',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              fontFamily: 'ICT',
-                              color: Colors.grey[500],
+                        const MyCountryCode(),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        MyButton(
+                            onClick: () {},
+                            height: height / 15.5,
+                            buttonColor: Colors.blue,
+                            radius: height / 100,
+                            text: 'Sign In',
+                            textColor: Colors.white),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const MyOrText(),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const MyOutlineButton(),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Don\'t has any account ?',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                fontFamily: 'ICT',
+                                color: Colors.grey[500],
+                              ),
                             ),
-                          ),
-                          ButtonOfText(
-                              text: 'Register here'.toUpperCase(),
-                              color: Colors.blue,
-                              onClick: () {
-                                Navigator.pushNamed(context, RegisterPage.id);
-                              }),
-                        ],
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: height / 35),
-                        child: Text(
+                            ButtonOfText(
+                                text: 'Register here'.toUpperCase(),
+                                color: Colors.blue,
+                                onClick: () {
+                                  Navigator.pushNamed(context, RegisterPage.id);
+                                }),
+                          ],
+                        ),
+                        Text(
                           'Use the application according  to policy rules.'
                           'Any kinds of version'
                           ' will be subject to sanction',
@@ -168,8 +145,8 @@ class LoginPage extends StatelessWidget {
                             color: Colors.grey[500],
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ))
           ],

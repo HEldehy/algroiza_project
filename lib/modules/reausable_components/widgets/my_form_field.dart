@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MyFormField extends StatelessWidget {
+  Widget ?widget;
   final TextEditingController controller;
   final TextInputType type;
-  final IconData icon;
+   IconData ?icon;
   final String label;
   final VoidCallback validator;
   VoidCallback? onTap;
@@ -15,12 +16,12 @@ class MyFormField extends StatelessWidget {
   IconData? suffix;
   bool? isPassword = false;
   FocusNode? focusNode;
-
   MyFormField(
       {Key? key,
+        this.widget,
       required this.controller,
       required this.type,
-      required this.icon,
+       this.icon,
       required this.label,
       required this.validator,
       this.onTap,
@@ -35,32 +36,36 @@ class MyFormField extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      keyboardType: type,
-      decoration: InputDecoration(
-        labelText: label,
-        prefixIcon: Icon(icon),
-        suffixIcon: suffix != null
-            ? IconButton(onPressed: suffixPressed, icon: Icon(suffix))
-            : null,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(1.0),
+    return Container(
+      height: 50,
+      child: TextFormField(
+        controller: controller,
+        keyboardType: type,
+        decoration: InputDecoration(
+          labelText: label,
+          prefixIcon: Icon(icon),
+          suffixIcon: suffix != null
+              ? IconButton(onPressed: suffixPressed, icon: Icon(suffix))
+              : null,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(1.0),
+          ),
         ),
-      ),
-      validator: ( value ){
-        return '$value Must Not be empty';
+        validator: ( value ){
+          return '$value Must Not be empty';
 
-      },
-      onTap: () {
-        onTap!();
-      },
-      onFieldSubmitted: (String value) {
-        onSubmit!;
-      },
-      onChanged: (String value) {
-        onChange!();
-      },
+        },
+        onTap: () {
+          onTap!();
+        },
+        onFieldSubmitted: (String value) {
+          onSubmit!;
+        },
+        onChanged: (String value) {
+          onChange!();
+        },
+
+      ),
     );
   }
 }

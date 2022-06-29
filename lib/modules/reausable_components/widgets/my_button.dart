@@ -3,39 +3,46 @@ import 'package:flutter/material.dart';
 class MyButton extends StatelessWidget {
   final VoidCallback onClick;
   final double height;
-  final double width;
+   double ?width;
   final Color buttonColor;
   final double radius;
   final String text;
   final Color textColor;
-  const MyButton({
-    Key? key,
-    required this.onClick,
-    required this.height,
-    required this.width,
-    required this.buttonColor,
-    required this.radius,
-    required this.text,
-    required this.textColor
-
-  }) : super(key: key);
+   MyButton(
+      {Key? key,
+      required this.onClick,
+      required this.height,
+       this.width =double.infinity,
+      required this.buttonColor,
+      required this.radius,
+      required this.text,
+      required this.textColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      onPressed: () {
-        onClick();
-      },
-      child: Container(
-        height: height,
-        width: width,
-        decoration: BoxDecoration(
-            color: buttonColor, borderRadius: BorderRadius.circular(radius)),
-        child:  Center(
+    return Container(
+      decoration: BoxDecoration(
+        color: buttonColor,
+
+        borderRadius: BorderRadius.circular(3),
+      ),
+      height: 50,
+      child: MaterialButton(
+        onPressed: () {
+          onClick();
+        },
+        child: Center(
           child: Text(
             text,
+
             textAlign: TextAlign.center,
-            style: TextStyle(color:textColor),
+            style: TextStyle(color: textColor,
+              fontSize: 18,
+              fontWeight: FontWeight.w500
+
+
+            ),
           ),
         ),
       ),

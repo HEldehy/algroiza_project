@@ -7,7 +7,7 @@ class OnBoardingBuildModules extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(model.image),
+        Expanded(child: Image.asset(model.image)),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Text(
